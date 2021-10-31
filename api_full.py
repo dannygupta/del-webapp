@@ -19,13 +19,8 @@ def index():
 
 class Classify(Resource):
     def get(self):
-
-        readme_file = open("README.md", "r")
-        md_template_string = markdown.markdown(
-            readme_file.read(), extensions=["fenced_code"]
-        )
-    
-        return md_template_string
+        post_string = "Please do a POST with your string as \"input\" parameter"
+        return post_string
 
     
     def string_out(self, input):
@@ -55,8 +50,8 @@ class Classify(Resource):
 
 
     
-
+#add an endpoint where we can send data
 api.add_resource(Classify, '/classify')
 
 if __name__ == '__main__':
-    app.run()  # run our Flask apa
+    app.run()  # run the application 
